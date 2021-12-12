@@ -1,8 +1,10 @@
 ﻿#include <iostream>
 #include <string>
+#include "klucz.h"
 #include "szyfrowaniecezara.h"
 using namespace std;
 szyfrowaniecezara cezar;
+klucz key;
 
 int main()
 {
@@ -14,7 +16,7 @@ int main()
 	getline(cin, tekst);
 	while (c == 1)
 	{
-		cout << "podaj opcje szyfrowania:\n1. szyfr podstawieniowy\n2. Szyfr przestawieniowy \n3. Szyfr podstawieniowy i szyfr przestawieniowy. \n4. Odszyfruj teskt.";
+		cout << "podaj opcje szyfrowania:\n1. szyfr podstawieniowy\n2. Szyfr przestawieniowy \n3. Szyfr podstawieniowy i szyfr przestawieniowy. \n4. Odszyfruj teskt.\n5. stworz klucz";
 		cin >> a;
 		if (a == 1)
 		{
@@ -40,6 +42,9 @@ int main()
 		{
 
 			cezar.deszyfrowanie_cezara(tekst2, d, tekst3);
+		}
+		else if (a == 5) {
+			key.tworz();
 		}
 	}
 }
